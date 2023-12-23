@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto MISP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Anonymous Pro', monospace;
+            text-align: center;
+            margin: 50px;
+            background-color: black;
+            color: green;
+            letter-spacing: 1px;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            height: 50px; 
+            background-color: #333;
+            color: green;
+            border: 1px solid green;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: green;
+            border: 1px solid green;
+            margin: 5px;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: green;
+        }
+
+        .hacker-strings {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .hacker-string {
+            display: inline-block;
+            margin: 0 5px;
+            opacity: 0.5;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            color: green;
+            margin: 0 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #333;
+            color: green;
+            border: 1px solid green;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1>Auto MISP</h1>
+    <br><br>
+        
+    <form method="post">
+        <label for="search_query">Enter your MISP URL:</label>
+        <input type="text" id="search_query" name="mispurl" required>
+        <br><br><br>
+        <label for="search_query">Enter your MISP API:</label>
+        <input type="text" id="search_query" name="mispapi" required>
+        <br><br><br>
+        <label for="search_query">Enter your Event ID:</label>
+        <input type="text" id="search_query" name="mispeventid" required>
+        <br><br><br>
+        <label for="iocList">Enter IOCs (one per line):</label>
+        <br>
+        <textarea id="iocList" name="iocList" required></textarea>
+        <br><br><br>
+        <button type="submit">Integrate</button>
+    </form>
+
+    <div id="result">
+        {% if result %}
+            <p>{{ result }}</p>
+        {% endif %}
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/AzizKpln" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/aziz-k-074604170/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:aziz.kaplan@infinitumit.com.tr" class="social-icon"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <br><br>
+    <footer>
+        <div>
+            <p>&copy; 2023 Auto MISP. All rights reserved.</p>
+            <p>Developed by Aziz Kaplan</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
